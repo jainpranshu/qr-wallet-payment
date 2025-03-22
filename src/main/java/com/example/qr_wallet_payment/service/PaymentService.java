@@ -19,7 +19,7 @@ public class PaymentService {
     private final TransactionalRepository transactionalRepository;
 
     @Transactional //to maintain atomicity // it prevents partial update like money deducted but didn't credit to merchant, So if it fails it revert back everything
-    public String processPayment(String customerId,String merchantId,Double amount){
+    public String processQRPayment(String customerId,String merchantId,Double amount){
         //fetch customer & merchants from the db
         Customer customer = customerRepository.findById(customerId).orElseThrow(()-> new RuntimeException("Customer not found"));
 

@@ -14,11 +14,11 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
-    public ResponseEntity<String> makePayment(@RequestParam String customerId,
+    public ResponseEntity<String> makeQRPayment(@RequestParam String customerId,
                                               @RequestParam String merchantId,
                                               @RequestParam Double amount){
         try{
-            String response = paymentService.processPayment(customerId,merchantId,amount);
+            String response = paymentService.processQRPayment(customerId,merchantId,amount);
             return  ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Payment Failed: "+ e.getMessage());
