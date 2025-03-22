@@ -3,6 +3,7 @@ package com.example.qr_wallet_payment.controller;
 import com.example.qr_wallet_payment.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
+    @PostMapping("/qr-pay")  // ✅ Ensure this exists
     public ResponseEntity<String> makeQRPayment(@RequestParam String customerId,
                                               @RequestParam String merchantId,
                                               @RequestParam Double amount){
