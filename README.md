@@ -17,3 +17,8 @@ qr-wallet-payment/
 │
 └── pom.xml                     # Maven Dependencies
 
+
+
+We are using H2
+http://localhost:8080/h2-console/login.do?jsessionid=db4d65402cf9aa0e597924aefdda2754
+
